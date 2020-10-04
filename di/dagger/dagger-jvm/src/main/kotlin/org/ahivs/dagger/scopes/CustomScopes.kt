@@ -38,12 +38,10 @@ fun main() {
     //since the singleton resides on the carcomponent itself
     //meaning if there was no singleton scope, everytime we call carComponent.getCar() we will
     // be presented with different car objects i.e. each time a new object is instantiated
-//    var carComponent: CarComponent = DaggerCarComponent.create()
+    val carComponent: CarComponent = DaggerCarComponent.create()
 
     //here since it is singleton we will get the same object
-//    val car = carComponent.getCar()
-
-//    println(car)
-//    println(carComponent.getCar())
-
+    val car = carComponent.getCar()
+    println(car)
+    println(carComponent.getCar())
 }
