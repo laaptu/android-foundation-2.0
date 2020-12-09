@@ -1,0 +1,51 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = '1.4.20'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext.versions = [
+        "compileSdk"      : 29,
+        "minSdk"          : 16,
+        "targetSdk"       : 29,
+        "dagger"          : "2.30.1",
+        "truth"           : "1.1",
+        "recyclerview"    : "1.1.0",
+        "constraintLayout": "2.0.4",
+        "lifecycle"       : "2.2.0"
+]
+
+ext.deps = [
+        "androidx": [
+                "recyclerview"    : "androidx.recyclerview:recyclerview:${versions.recyclerview}",
+                "constraintLayout": "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}",
+                "livedata"        : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}",
+                "viewmodel"       : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
+        ],
+        "dagger"  : [
+                "core"    : "com.google.dagger:dagger:${versions.dagger}",
+                "compiler": "com.google.dagger:dagger-compiler:${versions.dagger}"
+        ],
+        "truth"   : "com.google.truth:truth:${versions.truth}"
+]
