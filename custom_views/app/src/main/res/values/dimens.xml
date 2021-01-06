@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <dimen name="txtSize">14sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="padding">40dp</dimen>
+</resources>
